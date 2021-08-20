@@ -3,6 +3,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './components/App'
 import Home from './components/Home'
+import Login from './components/Login'
 import Profile from './components/Profile'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
@@ -23,12 +24,22 @@ const router = new VueRouter({
             path: '/profile',
             name: 'profile',
             component: Profile
+        },
+        {
+            path: '/home',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: Login
         }
     ],
 });
 
 const app = new Vue({
     el: '#app',
-    components: { App },
+    components: { App},
     router,
 });

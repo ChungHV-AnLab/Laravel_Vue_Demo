@@ -1,12 +1,6 @@
 <template>
     <div id="Home">
         <div>
-            <button class="btn btn-success">
-                <i class="fab fa-twitch"></i>
-                <a class = "non-textdecoration" href="https://id.twitch.tv/oauth2/authorize?response_type=code&client_id=2n9u9j32o07bqgpgkyakmgy7hjdbsw&redirect_uri=http://localhost/profile&scope=viewing_activity_read&state=c3ab8aa609ea11e793ae92361f002671&force_verify=true">
-                Login with Twitch
-                </a>
-            </button>
             <div id = "topGames">
                 <div class="topGames" v-for='topGame in listOfTopGames' :key="topGame.gameID">
                     <div class="topGameThumbnailContrainer">
@@ -30,7 +24,7 @@ export default {
     },
     methods: {
         getTopGame: function(){
-            let fetchLink = 'https://api.twitch.tv/helix/games/top?first=30';
+            let fetchLink = 'https://api.twitch.tv/helix/games/top?first=28';
             fetch(fetchLink, {
                 method: 'get',
                 headers: new Headers({
